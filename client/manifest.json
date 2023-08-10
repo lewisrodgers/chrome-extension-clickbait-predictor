@@ -1,0 +1,18 @@
+{
+  "name": "Clickbait Predictor",
+  "version": "1.0",
+  "description": "Classifies headlines into clickbait",
+  "manifest_version": 2,
+  "permissions": [
+    "activeTab"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["https://*.worldtruth.tv/*"],
+      "css": ["main.css"],
+      "js": ["config.js", "lib/Classify.js", "index.js"],
+      "run_at": "document_end",
+      "all_frames": true
+    }
+  ]
+}
